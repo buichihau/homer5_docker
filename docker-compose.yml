@@ -14,5 +14,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./var_lib_mysql:/var/lib/mysql
+      - ./etc_opensips/opensips.cfg:/etc/opensips/opensips.cfg:ro
+      - ./opt/rotation.ini:/opt/rotation.ini:ro
     network_mode: "host"
     logging: *default-logging
