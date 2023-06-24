@@ -133,7 +133,7 @@ function MYSQL_INITIAL_DATA_LOAD () {
   mysqld --initialize-insecure=on --user=mysql --datadir="$DATADIR"
 
   MYSQL_RUN
-
+  
   echo 'Setting root password....'
   mysql -u root -e "SET PASSWORD = PASSWORD('$sqlpassword');FLUSH PRIVILEGES;"
 
@@ -245,6 +245,7 @@ a2enmod rewrite
 rm -f /var/run/apache2/apache2.pid 2> /dev/null
 apachectl start
 
+mysql -u root -e "SET GLOBAL max_connections = 100000"
 
 # It's Homer time!
 /usr/sbin/opensipsctl start && /usr/sbin/opensipsctl start

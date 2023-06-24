@@ -13,8 +13,13 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./var_lib_mysql:/var/lib/mysql
+      #- ./var_lib_mysql:/var/lib/mysql
       - ./etc_opensips/opensips.cfg:/etc/opensips/opensips.cfg:ro
       - ./opt/rotation.ini:/opt/rotation.ini:ro
-    network_mode: "host"
+      - ./run.sh:/run.sh
+    #network_mode: "host"
     logging: *default-logging
+    ports:
+      - "192.168.2.122:9069:9060/udp"
+      - "0.0.0.0:8080:80/tcp"
+      - "127.0.0.1:3306:3306/tcp"
