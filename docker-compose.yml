@@ -8,8 +8,8 @@ x-logging:
         max-file: "5"
 
 services:
-  homer-docker:
-    image: homer_vihat:1.0
+  homer5-docker:
+    image: homer5-docker:1.0
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
