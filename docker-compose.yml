@@ -17,9 +17,9 @@ services:
       - ./etc_opensips/opensips.cfg:/etc/opensips/opensips.cfg:ro
       - ./opt/rotation.ini:/opt/rotation.ini:ro
       - ./run.sh:/run.sh
-    #network_mode: "host"
+    network_mode: "host"
     logging: *default-logging
-    ports:
-      - "192.168.2.122:9069:9060/udp"
-      - "0.0.0.0:8080:80/tcp"
-      - "127.0.0.1:3306:3306/tcp"
+    #ports:
+      #- "192.168.2.122:9069:9060/udp"
+      #- "0.0.0.0:8080:80/tcp"
+      #- "127.0.0.1:3306:3306/tcp"
