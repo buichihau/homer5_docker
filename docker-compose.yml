@@ -11,6 +11,7 @@ services:
   homer5-docker:
     image: homer5-docker:1.0
     restart: always
+    container_name: homer5
     volumes:
       - /etc/localtime:/etc/localtime:ro
       #- ./var_lib_mysql:/var/lib/mysql
